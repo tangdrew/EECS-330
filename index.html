@@ -10,6 +10,23 @@
 	<!--JQuery-->
 	<script src="//code.jquery.com/jquery.js"></script>
 	<script src="bootstrap.js"></script>
+	
+	<!--FlipClock-->
+	<link rel="stylesheet" href="flipclock.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="flipclock.js"></script>
+	
+	<script type="text/javascript">
+		var clock;
+
+		$(document).ready(function() {
+
+			// Instantiate a counter
+			clock = new FlipClock($('.clock'), 101, {
+				clockFace: 'Counter'
+			});
+		});
+	</script>
 
 </head>
 
@@ -42,7 +59,10 @@
 	<div class="row" style="text-align: center; margin-top: 100px; margin-bottom: 20px">
 		<h2>YOUR BALANCE</h2>
 		<img src="https://lh6.ggpht.com/7uOU316xrU1bE2ja0pwoQpc9DExtoUV21kl8F90KWTDwdjymZt7jjunlYK4_AjkycA=w300" style="height: 100px"></img>
+		<!--
 		<div style="margin-top: 25px"><span style="border-width: 1px; border: solid">&nbsp;3&nbsp;</span><span style="border-width: 1px; border: solid">&nbsp;1&nbsp;</span><span style="border-width: 1px; border: solid">&nbsp;0&nbsp;</span><span style="border-width: 1px; border: solid">&nbsp;0&nbsp;</span></div>
+		-->
+		<div class="clock" style="margin:2em;"></div>
 	</div>
 	<div class="row">
 		<div class="col-xs-2"></div>
