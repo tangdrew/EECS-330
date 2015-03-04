@@ -48,7 +48,7 @@ function showDevice(id){
 	document.getElementById(id).classList.add('hidden');
 }
 function redeem(value){
-	var beforeAmount = 0;
+	var beforeAmount = 1000;
 	if(typeof(Storage) !== "undefined") {
 		if(!isNaN(sessionStorage.getItem("fitCoin"))) {
 			beforeAmount = sessionStorage.getItem("fitCoin");
