@@ -1,4 +1,19 @@
 var device = "";
+if(typeof(Storage) !== "undefined") {
+    var fitCoin = localStorage.getItem("amount");
+} else {
+    var fitCoin = 1000;
+}
+if(typeof fitCoin == 'undefined'){
+	alert('undefined');
+}
+else{
+	if(fitCoin == null){
+		fitCoin = 1000;
+	}
+}
+
+
 function selected(id){
 	document.getElementById(id).classList.add('selected');
 	if(id == "applewatch"){
