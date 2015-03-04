@@ -12,6 +12,9 @@
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src="bootstrap.js"></script>
 	
+	<link href="general.css" rel="stylesheet">
+	<script src="general.js"></script>
+	
 </head>
 
 <body>
@@ -43,15 +46,33 @@
 	
 	<!--Body-->
 	<div class="row" style="margin-top: 75px; margin-bottom: 20px">
-		<div class="panel panel-default col-xs-12" style="padding: 25px">
+		<div class="panel panel-default col-xs-12 hidden" style="padding: 25px" id="apple-panel">
 			<div class="panel-body" style="padding: 0px; height: 100%">
-				<h4 style="float: left; color: #446AD4">HEART RATE MONITOR</h4><span style="float: right; margin-top: 10px; margin-bottom: 10px; color: #5BEB9B">Built in</span>
+				<h4 style="float: left; color: #446AD4">APPLE WATCH</h4><span style="float: right; margin-top: 10px; margin-bottom: 10px; color: #5BEB9B">Connected</span>
 			</div>
 		</div>
 		
-		<div class="panel panel-default col-xs-12" style="padding: 25px; margin-top: 3%">
+		<div class="panel panel-default col-xs-12" style="padding: 25px; margin-top: 3%" id="fitbit-panel">
 			<div class="panel-body" style="padding: 0px; height: 100%">
 				<h4 style="float: left; color: #446AD4">FITBIT</h4><span style="float: right; margin-top: 10px; margin-bottom: 10px; color: #5BEB9B">Connected</span>
+			</div>
+		</div>
+		
+		<div class="panel panel-default col-xs-12" style="padding: 25px; margin-top: 3%" id="heart-panel">
+			<div class="panel-body" style="padding: 0px; height: 100%">
+				<h4 style="float: left; color: #446AD4">HEART RATE MONITOR</h4><span style="float: right; margin-top: 10px; margin-bottom: 10px; color: #5BEB9B">Built-in</span>
+			</div>
+		</div>
+		
+		<div class="panel panel-default col-xs-12 hidden" style="padding: 25px; margin-top: 3%" id="jawbone-panel">
+			<div class="panel-body" style="padding: 0px; height: 100%">
+				<h4 style="float: left; color: #446AD4">JAWBONE UP</h4><span style="float: right; margin-top: 10px; margin-bottom: 10px; color: #5BEB9B">Connected</span>
+			</div>
+		</div>
+		
+		<div class="panel panel-default col-xs-12 hidden" style="padding: 25px; margin-top: 3%" id="nike-panel">
+			<div class="panel-body" style="padding: 0px; height: 100%">
+				<h4 style="float: left; color: #446AD4">NIKE FUEL BAND</h4><span style="float: right; margin-top: 10px; margin-bottom: 10px; color: #5BEB9B">Connected</span>
 			</div>
 		</div>
 	</div>
@@ -68,25 +89,25 @@
 			<h4 class="modal-title" id="myModalLabel">Which Device Would You Like To Add?</h4>
 		  </div>
 		  <div class="modal-body" style="text-align: center">
-			<div class="panel panel-default">
-				<div class="panel-body">
+			<div class="panel panel-default" onclick="selected(this.id)" id="applewatch">
+				<div class="panel-body device-panel">
 					Apple Watch
 				</div>
 			</div>
-			<div class="panel panel-default">
-				<div class="panel-body">
+			<div class="panel panel-default" onclick="selected(this.id)" id="jawbone">
+				<div class="panel-body device-panel">
 					Jawbone Up
 				</div>
 			</div>
-			<div class="panel panel-default">
-				<div class="panel-body">
+			<div class="panel panel-default" onclick="selected(this.id)" id="fuelband">
+				<div class="panel-body device-panel">
 					Nike Fuel Band
 				</div>
 			</div>
 		  </div>
 		  <div class="modal-footer">
 			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-			<button type="button" class="btn btn-primary">Add Device</button>
+			<button type="button" class="btn btn-primary" onclick="showDevice(device)">Add Device</button>
 		  </div>
 		</div>
 	  </div>
