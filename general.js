@@ -45,4 +45,5 @@ function showDevice(id){
 		$('#myModal').modal('hide')
 	}
 	document.getElementById(id).classList.remove('selected');
+	document.getElementById(id).classList.add('hidden');
 }
