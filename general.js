@@ -1,6 +1,6 @@
 var device = "";
 if(typeof(Storage) !== "undefined") {
-    var fitCoin = localStorage.getItem("amount");
+    var fitCoin = sessionStorage.getItem("fitCoin");
 } else {
     var fitCoin = 1000;
 }
@@ -50,11 +50,13 @@ function showDevice(id){
 function redeem(value){
 	var beforeAmount = 0;
 	if(typeof(Storage) !== "undefined") {
-		beforeAmount = localStorage.getItem("amount");
+		if(!isNaN(sessionStorage.getItem("fitCoin"))) {
+			beforeAmount = sessionStorage.getItem("fitCoin");
+		}
 	} 
 	var amount = parseInt(beforeAmount) + parseInt(value);
-	localStorage.setItem("amount", amount);
+	sessionStorage.setItem("fitCoin", amount);
 }
 function reset(){
-	localStorage.removeItem("amount");
+	sessionStorage.setItem("fitCoin", 1000);
 }
