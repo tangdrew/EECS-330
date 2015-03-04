@@ -47,3 +47,14 @@ function showDevice(id){
 	document.getElementById(id).classList.remove('selected');
 	document.getElementById(id).classList.add('hidden');
 }
+function redeem(value){
+	var beforeAmount = 0;
+	if(typeof(Storage) !== "undefined") {
+		beforeAmount = localStorage.getItem("amount");
+	} 
+	var amount = parseInt(beforeAmount) + parseInt(value);
+	localStorage.setItem("amount", amount);
+}
+function reset(){
+	localStorage.removeItem("amount");
+}
