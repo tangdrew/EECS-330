@@ -51,12 +51,31 @@
 		
 		<div class="panel panel-default col-xs-12" style="padding: 25px; margin-top: 3%">
 			<div class="panel-body" style="padding: 0px; height: 100%">
-				<h4 style="float: left; color: #446AD4">FITBIT</h4><span style="float: right; margin-top: 10px; margin-bottom: 10px; color: #5BEB9B">Built in</span>
+				<h4 style="float: left; color: #446AD4">FITBIT</h4><span style="float: right; margin-top: 10px; margin-bottom: 10px; color: #5BEB9B">Connected</span>
 			</div>
 		</div>
 	</div>
 	<div class="row" style="text-align: center">
-		<button class="btn btn-primary">ADD A DATA SOURCE</button>
+		<button class="btn btn-primary" data-toggle="modal" data-target="#myModal">ADD A DATA SOURCE</button>
+	</div>
+	
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-dialog">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			<h4 class="modal-title" id="myModalLabel">Which Device Would You Like To Add?</h4>
+		  </div>
+		  <div class="modal-body">
+			...
+		  </div>
+		  <div class="modal-footer">
+			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			<button type="button" class="btn btn-primary">Add Device</button>
+		  </div>
+		</div>
+	  </div>
 	</div>
 </body>
 
