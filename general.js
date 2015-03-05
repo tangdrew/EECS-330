@@ -60,8 +60,12 @@ function redeem(value){
 	} 
 	var amount = parseInt(beforeAmount) + parseInt(value);
 	sessionStorage.setItem("fitCoin", amount);
-	sessionStorage.setItem("coinArray", [19, 22, 32, 20, 21, 0]);
+	var timeArray = sessionStorage.getItem("timeArray").split(",");
+	sessionStorage.setItem("timeArray", sessionStorage.getItem("timeArray")+", "+timeArray.length);
+	sessionStorage.setItem("coinArray", sessionStorage.getItem("coinArray")+", "+parseInt(parseInt(fitCoin)+parseInt(value)));
 }
 function reset(){
 	sessionStorage.setItem("fitCoin", 1000);
+	sessionStorage.setItem("timeArray", [0, 1, 2, 3, 4, 5]);
+	sessionStorage.setItem("coinArray", [19, 22, 32, 20, 21, 50]);
 }
