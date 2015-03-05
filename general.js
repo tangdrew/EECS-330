@@ -13,6 +13,10 @@ else{
 	}
 }
 
+if(sessionStorage.getItem("timeArray") == null || sessionStorage.getItem("coinArray") == null) {
+    sessionStorage.setItem("timeArray", [0, 1, 2, 3, 4, 5]);
+	sessionStorage.setItem("coinArray", [19, 22, 32, 20, 21, 50]);
+}
 
 function selected(id){
 	document.getElementById(id).classList.add('selected');
@@ -56,6 +60,7 @@ function redeem(value){
 	} 
 	var amount = parseInt(beforeAmount) + parseInt(value);
 	sessionStorage.setItem("fitCoin", amount);
+	sessionStorage.setItem("coinArray", [19, 22, 32, 20, 21, 0]);
 }
 function reset(){
 	sessionStorage.setItem("fitCoin", 1000);
