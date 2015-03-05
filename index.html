@@ -86,7 +86,10 @@
 </body>
 
 	<script>
-
+	var timeArray = [0, 1, 2, 3, 4, 5];
+	var coinArray = [19, 22, 32, 20, 21, 50];
+	var ninety = 90;
+	console.log(coinArray[0]);
 	var graph = new Rickshaw.Graph( {
 		width: 200,
 		element: document.getElementById("chart"),
@@ -94,13 +97,9 @@
 		padding: { top: 0.1 },
 		series: [
 			{
-				data: [ { x: 0, y: 40 }, { x: 1, y: 49 }, { x: 2, y: 38 }, { x: 3, y: 30 }, { x: 4, y: 32 } ],
+				data: [ { x: timeArray[0], y: coinArray[0] }, { x: 1, y: 49 }, { x: 2, y: 38 }, { x: 3, y: 30 }, { x: 4, y: 32 } ],
 				color: 'steelblue',
 				name: "blue",
-			}, {
-				data: [ { x: 0, y: 19 }, { x: 1, y: 22 }, { x: 2, y: 32 }, { x: 3, y: 20 }, { x: 4, y: 21 } ],
-				color: 'lightblue',
-				name: "light blue"
 			}
 		]
 	} );
