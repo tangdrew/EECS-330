@@ -16,7 +16,7 @@ else{
 //Graph Data session storage
 if(sessionStorage.getItem("timeArray") == null || sessionStorage.getItem("coinArray") == null) {
     sessionStorage.setItem("timeArray", [0, 1, 2, 3, 4, 5]);
-	sessionStorage.setItem("coinArray", [19, 22, 32, 20, 21, 50]);
+	sessionStorage.setItem("coinArray", [950, 1075, 1120, 920, 930, 1000]);
 }
 //Redeemed Array session storage
 if(sessionStorage.getItem("redeemedArray") == null) {
@@ -73,6 +73,6 @@ function redeem(value, id){
 function reset(){
 	sessionStorage.setItem("fitCoin", 1000);
 	sessionStorage.setItem("timeArray", [0, 1, 2, 3, 4, 5]);
-	sessionStorage.setItem("coinArray", [19, 22, 32, 20, 21, 50]);
+	sessionStorage.setItem("coinArray", [950, 1075, 1120, 920, 930, 1000]);
 	sessionStorage.setItem("redeemedArray", []);
 }
