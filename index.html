@@ -57,21 +57,21 @@
               <li><a href="redeem.html">Redeem</a></li>
               <li><a href="games.html">Games</a></li>
 			  <li><a href="devices.html">Devices</a></li>
+			  <li><a href="index.html" onclick="reset()">Reset</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
       </nav>
 
 	<!--Body-->
-	<div class="row" style="text-align: center; margin-top: 70px; margin-bottom: 20px">
+	<div class="row" style="text-align: center; margin-top: 70px; margin-bottom: 5px">
 		<img src="fitcoin.png" style="height: 100px"></img>
-		<div class="clock" style="margin:2em; text-align: center; margin-left: 5%; width: 280px"></div>
+		<div class="clock" style="margin:2em; text-align: center; margin-left: 5%; margin-bottom: 0px; width: 280px"></div>
 	</div>
-	<button onclick="reset()">Reset</button>
 	<div class="row">
 		<div class="col-xs-2"></div>
 		<div class="panel panel-default col-xs-8">
-			<div class="panel-body" style="padding-left: 0px">
+			<div class="panel-body" style="padding-left: 0px; height: 50px">
 				<div id="chart" style="float: left"></div>
 			</div>
 		</div>
@@ -96,6 +96,7 @@
 	console.log(coinArray);
 	var graph = new Rickshaw.Graph( {
 		width: 200,
+		height: 100,
 		element: document.getElementById("chart"),
 		renderer: 'lineplot',
 		padding: { top: 0.1 },
