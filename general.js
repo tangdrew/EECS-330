@@ -1,4 +1,5 @@
 var device = "";
+//FitCoin session storage
 if(typeof(Storage) !== "undefined") {
     var fitCoin = sessionStorage.getItem("fitCoin");
 } else {
@@ -12,10 +13,14 @@ else{
 		fitCoin = 1000;
 	}
 }
-
+//Graph Data session storage
 if(sessionStorage.getItem("timeArray") == null || sessionStorage.getItem("coinArray") == null) {
     sessionStorage.setItem("timeArray", [0, 1, 2, 3, 4, 5]);
 	sessionStorage.setItem("coinArray", [19, 22, 32, 20, 21, 50]);
+}
+//Redeemed Array session storage
+if(sessionStorage.getItem("redeemedArray") == null) {
+	sessionStorage.setItem("redeemedArray", []);
 }
 
 function selected(id){
@@ -51,7 +56,7 @@ function showDevice(id){
 	document.getElementById(id).classList.remove('selected');
 	document.getElementById(id).classList.add('hidden');
 }
-function redeem(value){
+function redeem(value, id){
 	var beforeAmount = 1000;
 	if(typeof(Storage) !== "undefined") {
 		if(!isNaN(sessionStorage.getItem("fitCoin"))) {
@@ -63,9 +68,11 @@ function redeem(value){
 	var timeArray = sessionStorage.getItem("timeArray").split(",");
 	sessionStorage.setItem("timeArray", sessionStorage.getItem("timeArray")+", "+timeArray.length);
 	sessionStorage.setItem("coinArray", sessionStorage.getItem("coinArray")+", "+parseInt(parseInt(fitCoin)+parseInt(value)));
+	sessionStorage.setItem("redeemedArray", sessionStorage.getItem("redeemedArray")+" "+id);
 }
 function reset(){
 	sessionStorage.setItem("fitCoin", 1000);
 	sessionStorage.setItem("timeArray", [0, 1, 2, 3, 4, 5]);
 	sessionStorage.setItem("coinArray", [19, 22, 32, 20, 21, 50]);
+	sessionStorage.setItem("redeemedArray", []);
 }
