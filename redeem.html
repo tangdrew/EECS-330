@@ -80,6 +80,7 @@
 		var redeemedStr = sessionStorage.getItem("redeemedArray")
 		var redeemedArray = redeemedStr.split(" ");
 		for (var i = 0; i < redeemedArray.length; i++) {
+			console.log(redeemedArray[i]);
 			if(redeemedArray[i] !== ""){
 				document.getElementById(redeemedArray[i]).classList.add('hidden');
 			}
