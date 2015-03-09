@@ -25,14 +25,21 @@
 	
 	<script type="text/javascript">
 		var clock;
-
+		var cStr = sessionStorage.getItem("coinArray");
+		var cArray = coinStr.split(",");
+		var len = cArray.length;
+		for (var i = 0; i < cArray.length; i++) {
+			cArray[i] = parseInt(cArray[i]);
+		}
+		
 		$(document).ready(function() {
 
 			// Instantiate a counter
-			clock = new FlipClock($('.clock'), fitCoin, {
+			clock = new FlipClock($('.clock'), cArray[len-1], {
 				clockFace: 'Counter'
 			});
 		});
+
 	</script>
 
 </head>
@@ -92,8 +99,7 @@
 		timeArray[i] = parseInt(timeArray[i]);
 		coinArray[i] = parseInt(coinArray[i]);
 	}
-	console.log(timeArray);
-	console.log(coinArray);
+	
 	var graph = new Rickshaw.Graph( {
 		width: 200,
 		height: 100,
