@@ -65,7 +65,7 @@ function redeem(value, id){
 		}
 	} 
 	var amount = parseInt(beforeAmount) + parseInt(value);
-	sessionStorage.setItem("fitCoin", amount);
+	sessionStorage.setItem("fitCoin", parseInt(amount));
 	var timeArray = sessionStorage.getItem("timeArray").split(",");
 	sessionStorage.setItem("timeArray", sessionStorage.getItem("timeArray")+", "+timeArray.length);
 	sessionStorage.setItem("coinArray", sessionStorage.getItem("coinArray")+", "+parseInt(parseInt(fitCoin)+parseInt(value)));
