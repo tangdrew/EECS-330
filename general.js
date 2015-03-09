@@ -4,6 +4,7 @@ if(typeof(Storage) !== "undefined") {
     var fitCoin = sessionStorage.getItem("fitCoin");
 } else {
     var fitCoin = 1000;
+	sessionStorage.setItem("fitCoin", 1000);
 }
 if(typeof fitCoin == 'undefined'){
 	alert('undefined');
