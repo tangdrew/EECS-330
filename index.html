@@ -40,6 +40,9 @@
 			});
 		});
 		console.log(sessionStorage.getItem("fitCoin"));
+		if(sessionStorage.getItem("fitCoin") == null){
+			sessionStorage.setItem("fitCoin", 1000);
+		}
 	</script>
 
 </head>
